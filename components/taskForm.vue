@@ -36,7 +36,7 @@ export default {
           checkbox: false,
           id: Math.random().toString(21).slice(-5),
         };
-        this.$emit("add", todo);
+        this.store.addTask(todo);
         this.newTask = "";
       }
     },
