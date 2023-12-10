@@ -1,5 +1,5 @@
 <template>
-  <form class="mb-5 flex flex-col" @submit.prevent="add">
+  <form class="mb-5 flex flex-col" @submit.prevent="store.add(newTask)">
     <input
       class="mb-4 border-2 border-gray-200 rounded-md p-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
       type="text"
@@ -25,21 +25,7 @@ export default {
 
     return {
       store,
-      newTask: "",
     };
-  },
-  methods: {
-    add() {
-      if (this.newTask !== "") {
-        const todo = {
-          name: this.newTask,
-          checkbox: false,
-          id: Math.random().toString(21).slice(-5),
-        };
-        this.store.addTask(todo);
-        this.newTask = "";
-      }
-    },
   },
 };
 </script>
