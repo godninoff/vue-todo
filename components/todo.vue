@@ -23,11 +23,10 @@
 
 <script>
 import { useTaskStore } from "../../store/store";
-import { pinia } from "../store/piniaSetup";
 
 export default {
   setup() {
-    const store = useTaskStore(pinia);
+    const store = useTaskStore();
 
     return {
       store,
